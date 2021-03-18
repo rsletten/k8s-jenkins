@@ -3,9 +3,11 @@ kind: PersistentVolumeClaim
 metadata:
   name: jenkins-pvc  
   namespace: jenkins
+  annotations:
+    volume.beta.kubernetes.io/storage-class: slow
 spec:
   accessModes:
   - ReadWriteMany      
   resources:
      requests:
-       storage: 1Gi  
+       storage: 10Gi  
