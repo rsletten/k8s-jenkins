@@ -1,0 +1,14 @@
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: jenkins-cert
+  namespace: jenkins
+spec:
+  commonName: jenkins.cert.k8s.rsletten.com
+  secretName: jenkins-cert
+  dnsNames:
+    - jenkins.cert.k8s.rsletten.com
+  issuerRef:
+    name: letsencrypt-staging
+    kind: ClusterIssuer
